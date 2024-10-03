@@ -40,10 +40,10 @@ def make_sequence_features(
       map_unknown_to_x=True)
   features['between_segment_residues'] = np.zeros((num_res,), dtype=np.int32)
   features['domain_name'] = np.array([description.encode('utf-8')],
-                                     dtype=np.object_)
+                                     dtype=object)
   features['residue_index'] = np.array(range(num_res), dtype=np.int32)
   features['seq_length'] = np.array([num_res] * num_res, dtype=np.int32)
-  features['sequence'] = np.array([sequence.encode('utf-8')], dtype=np.object_)
+  features['sequence'] = np.array([sequence.encode('utf-8')], dtype=object)
   return features
 
 
